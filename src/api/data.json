@@ -1,0 +1,46 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Title 1",
+        "description": "Very welcome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00365721603264,
+          40.71316364960617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Title 2",
+        "description": "Hello"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00076076940603,
+          40.71398907807483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Title 3",
+        "description": "Hi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00610191975098, 40.713035098088085
+        ]
+      }
+    }
+  ]
+}
