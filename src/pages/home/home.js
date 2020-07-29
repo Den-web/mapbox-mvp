@@ -12,21 +12,24 @@ const Home = ({features, layerOptions, setPointItem}) => {
 	const popUpRef = useRef(new mapboxgl.Popup({offset: 15}));
 
 	useEffect(() => {
+        let mapInit = new mapboxgl.Map({
+            container: mapContainer.current,
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [-74.00555714964867, 40.71331846247975],
+            zoom: 15.5,
+            pitch: 45,
+            bearing: -17.6,
+            antialias: true,
+        }, []);
 
-		const initializeMap = ({ setMap, mapContainer }) => {
-			let mapInit = new mapboxgl.Map({
-				container: mapContainer.current,
-				style: 'mapbox://styles/mapbox/light-v10',
-				center: [-74.00555714964867, 40.71331846247975],
-				zoom: 15.5,
-				pitch: 45,
-				bearing: -17.6,
-				antialias: true,
-			}, []);
 
+        if(mapInit) {
             setMap(mapInit);
-		};
+            console.log(mapInit)
+        }
+    }, []);
 
+	useEffect(() => {
 		if (map) {
             map.on("load", () => {
                 setMap(map);
@@ -92,9 +95,6 @@ const Home = ({features, layerOptions, setPointItem}) => {
             }
         }
 
-		if (!map) {
-			initializeMap({ setMap, mapContainer });
-		}
 	}, [map, features, layerOptions, setPointItem]);
 
 	return <div className="map-container" ref={mapContainer}/>;
