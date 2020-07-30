@@ -32,7 +32,7 @@ const Home = ({features, layerOptions, setPointItem}) => {
                     type: "geojson",
                     data: {
                         type: 'FeatureCollection',
-                        features: features,
+                        features: [],
                     },
                 });
 
@@ -81,7 +81,7 @@ const Home = ({features, layerOptions, setPointItem}) => {
             });
         }
 
-  }, [map, features, layerOptions, setPointItem]);
+  }, [map, layerOptions, setPointItem]);
 
   useEffect(() => {
     if (map && map.getSource('pointsSource')) {
